@@ -108,14 +108,14 @@ Create releases directory
 mkdir /opt/apps/catalogue/releases
 
 ```
-Download the [release artifact from this page](http://165.227.64.79:8080/)
+Download the [release artifact from this page](https://s3.amazonaws.com/sod-openedx/catalogue/catalogue)
 
 e.g.
 
 ```
 cd  /opt/apps/catalogue/releases
 
-wget -c http://165.227.64.79:8080/catalogue
+wget -c https://s3.amazonaws.com/sod-openedx/catalogue/catalogue
 ```
 
 
