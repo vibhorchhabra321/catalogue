@@ -123,8 +123,7 @@ where **catalogue** is a binary
 
 create a symlink
 ```
-mkdir /opt/catalogue
-ln -s /opt/apps/catalogue/releases/catalogue /opt/catalogue
+ln -s /opt/apps/catalogue/releases/catalogue /opt/
 
 ```
 
