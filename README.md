@@ -129,12 +129,12 @@ ln -s /opt/apps/catalogue/releases/catalogue /opt/
 
 Launch the app
 ```
-/opt/catalogue -port 80 -images=/images/ -DSN 'dbuser:password@tcp(localhost:3306)/databasename'
+/opt/catalogue -port 7081 -images=/images/ -DSN 'dbuser:password@tcp(localhost:3306)/databasename'
 ```
 
 e.g.
 ```
-/opt/apps/catalogue -port 80 -images=/images/ -DSN 'devops:GKkdw72Jil0ld@tcp(localhost:3306)/catalogue'
+/opt/catalogue -port 7081 -images=/images/ -DSN 'devops:GKkdw72Jil0ld@tcp(localhost:3306)/catalogue'
 
 ```
 
