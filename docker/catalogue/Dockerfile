@@ -1,5 +1,10 @@
 FROM golang:1.7
 
+ARG user=app
+ARG group=app
+ARG uid=1000
+ARG gid=1000
+
 RUN mkdir /app
 COPY . /go/src/github.com/microservices-demo/catalogue/
 COPY images/ /images/
@@ -9,6 +14,15 @@ RUN cd /go/src/github.com/microservices-demo/catalogue && gvt restore
 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /app/main github.com/microservices-demo/catalogue/cmd/cataloguesvc
 
-CMD ["/app/main", "-port=80"]
+RUN groupadd -g ${gid} ${group} \
+    && useradd  -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
-EXPOSE 80
+
+RUN chown -R ${user}:${group} /app/main /images
+
+USER ${user}
+
+CMD ["/app/main", "-port=8081"]
+
+EXPOSE 8081
+
